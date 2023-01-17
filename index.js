@@ -1,6 +1,10 @@
+const { default: fetch } = require("node-fetch");
+
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
-  
+  let fetchRes = fetch("https://anapioficeandfire.com/api/books");
+  fetchRes.then(response=>response.json().then(data=>console.log(data)))
+  return fetchRes;
 }
 
 function renderBooks(books) {
